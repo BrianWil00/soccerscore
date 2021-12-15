@@ -61,8 +61,8 @@ function MainPage() {
                     </tr>
                     <tbody id="Standings"></tbody>
                     <div {...getStandings()}></div>
-                    <div {...BuildTable()}></div>
                     <div {...getFixtures()}></div>
+                    <div {...BuildTable()}></div>
                 </thead>
             </table>
         </div>
