@@ -1,0 +1,7 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  background: #252525;
+  background: size 5px;
+  padding: 0px;
+}

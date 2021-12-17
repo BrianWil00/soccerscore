@@ -1,0 +1,17 @@
+.item {
+    margin: 1rem 0;
+  }
+  
+  .container {
+    padding-bottom: 1.5rem;
+  }  
+
+  .content {
+    padding: 1rem;
+    font-size: 1.25rem;
+    text-align:center; 
+    margin-left:auto; 
+    margin-right:auto; 
+    width:35%;
+  }
+  

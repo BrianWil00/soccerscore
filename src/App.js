@@ -1,13 +1,15 @@
 import { Route, Switch } from 'react-router-dom';
 
-import MyTeams from './components/pages/MyTeams';
-import Stats from './components/pages/Stats';
-import MainPage from './components/pages/MainPage';
+import classes from "./App.module.css";
+
+import MyTeams from './pages/MyTeams';
+import Stats from './pages/Stats';
+import MainPage from './pages/MainPage';
 import MainNavigation from './components/layout/MainNavigation';
 
 function App() {
   return (
-    <div>
+    <div className={classes.mainDiv}>
       <MainNavigation />
       <Switch>
         <Route path='/' exact>
@@ -20,7 +22,7 @@ function App() {
           <MyTeams />
         </Route>
       </Switch>
-      </div>
+    </div>
   );
 }
 
