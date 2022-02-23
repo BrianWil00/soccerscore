@@ -1,13 +1,11 @@
-import Standings from "../components/Standings/Standings";
-import Fixtures from "../components/Fixtures/Fixtures";
-import Results from "../components/Results/Results";
-import classes from "./MainPage.module.css";
-import { useState, useEffect } from "react";
-
-
+//import Standings from "../components/Standings/Standings";
+//import Fixtures from "../components/Fixtures/Fixtures";
+//import Results from "../components/Results/Results";
+//import classes from "./MainPage.module.css";
+//import { useState, useEffect } from "react";
 
 function MainPage() {
-
+/*
     //Function to get premier league standings from the API 
     function GetStandingsData() {
         useEffect ( () => {
@@ -71,17 +69,20 @@ function MainPage() {
 
     GetStandingsData();
     GetFixturesData();
-
+    
     const [ standings, setStandings ]  = useState([ ]);
     const [ fixtures, setFixtures ] = useState([ ]);
-    
+*/   
     return (
+        /*
         <div className={classes.mainDiv}>
             <h1 className={classes.heading}>Standings</h1>          
             <Standings standings={standings} />
             <h1 className={classes.heading}>Fixtures</h1>          
             <Fixtures fixtures={fixtures} />
         </div>
+        */
+        <div> This is the main page that will feature League Table, Fixtures and Results </div>
     );
 }
 export default MainPage;

@@ -1,0 +1,22 @@
+.item {
+    margin: 1rem 0;
+  }
+  
+  .container {
+    display: flex;
+    padding-bottom: 1.5rem;
+  }  
+  .title {
+    text-align: center;
+    padding: 0.5rem;
+  }
+    
+  .content {
+    margin-left: 28%;
+    padding: 1rem;
+  }
+
+  .table , th, td{
+    border:1px solid black;
+    width: 600px;
+  }
