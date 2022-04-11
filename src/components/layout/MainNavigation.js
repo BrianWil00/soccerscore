@@ -8,13 +8,13 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <Link to='/'>Fixtures/Results</Link>
+            <Link to='/'>Home</Link>
           </li>
           <li>
             <Link to='/Stats'>Stats</Link>
           </li>
           <li>
-            <Link to='/MyTeams'>My Teams</Link>
+            <Link to='/Login'>Login</Link>
           </li>
         </ul>
       </nav>

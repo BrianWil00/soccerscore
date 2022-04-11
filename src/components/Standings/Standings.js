@@ -12,7 +12,7 @@ function Standings(props) {
                     <tr>
                     <th>Position</th>
                     <th>Team</th>
-                    <th>PLayed</th>
+                    <th>Played</th>
                     <th>Goal Diff</th>
                     <th>Points</th>
                     </tr>

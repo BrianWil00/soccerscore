@@ -1,0 +1,43 @@
+.mainDiv {
+    padding: 0 5%;
+    border: 0;
+    height: 1000px;
+  }
+  
+  .heading {
+    color: white;
+  }
+  
+  .container {
+    display: flex;
+    padding-bottom: 1.5rem;
+  }  
+  .content {
+    margin-left: 5;
+    padding: 1rem;
+  }
+  
+  .actions {
+    padding-top: 20px;
+  }
+  
+  .actions button {
+    font: inherit;
+    cursor: pointer;
+    color: white;
+    border-radius: 8px;
+    background-color: #252525;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    color: #252525;
+    background-color: #ffe600f1;
+  }
+  
+  .control  {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
