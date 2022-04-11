@@ -12,8 +12,9 @@ function Standings(props) {
                     <tr>
                     <th>Position</th>
                     <th>Team</th>
-                    <th>Points</th>
+                    <th>PLayed</th>
                     <th>Goal Diff</th>
+                    <th>Points</th>
                     </tr>
                 </thead>
                 <tbody id="Standings"></tbody>
@@ -21,8 +22,9 @@ function Standings(props) {
                     <tr>
                       <th>{standing.rank}</th>
                       <th>{standing.team}</th>
-                      <th>{standing.points}</th>
+                      <th>{standing.played}</th>
                       <th>{standing.goalsDiff}</th>
+                      <th>{standing.points}</th>
                     </tr>
                   ))}
             </table>

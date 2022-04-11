@@ -32,4 +32,4 @@ function TopReds(props) {
       </li>
     );
   }
-  export default TopYellows;
+  export default TopReds;

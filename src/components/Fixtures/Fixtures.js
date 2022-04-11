@@ -11,7 +11,7 @@ function Fixtures(props) {
                 <thead>
                     <tr>
                     <th>Date</th>
-                    <th>Location</th>
+                    <th>Status</th>
                     <th>Home</th>
                     <th>Score</th>
                     <th>Score</th>
@@ -22,7 +22,7 @@ function Fixtures(props) {
                 {props.fixtures.map(fixture => (
                     <tr>
                       <th>{fixture.when}</th>
-                      <th>{fixture.where}</th>
+                      <th>{fixture.status}</th>
                       <th>{fixture.home}</th>
                       <th>{fixture.homescore}</th>
                       <th>{fixture.awayscore}</th>
