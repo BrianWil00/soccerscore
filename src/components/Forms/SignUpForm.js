@@ -17,13 +17,12 @@ function SignUpForm(props) {
 
         const SignUpData = {
             username: enteredUsername,
-            email: enteredPassword,
-            phone: enteredTeam
+            password: enteredPassword,
+            team: enteredTeam
         }
 
         props.onSignUp(SignUpData);
     }
-
 
     return (
         <Card>
@@ -31,9 +30,9 @@ function SignUpForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='name'>Username</label>
                     <input type="text" required id="username" ref={usernameInputRef}/>
-                    <p><label htmlFor='email'>Password</label></p>
+                    <p><label htmlFor='password'>Password</label></p>
                     <input type="text" required id="password" ref={passwordInputRef}/>
-                    <p><label htmlFor='phone'>Team</label></p>
+                    <p><label htmlFor='team'>Team</label></p>
                     <select name="selectList" required id="team" ref={teamInputRef}>
                     <option value="Arsenal">Arsenal</option>
                     <option value="Aston Villa">Aston Villa</option>

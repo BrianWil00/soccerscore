@@ -7,15 +7,13 @@ function SignUp() {
     const history = useHistory();
 
     const SignUpHandler = signUpData => {
-        fetch(
-            'https://soccerscore-45c81-default-rtdb.firebaseio.com/signup.json',
-            {
-                method: 'POST',
-                body: JSON.stringify(signUpData),
-                headers: {
+        fetch( 'http://localhost:5000/addNewUser',{
+            method: 'POST',
+            body: JSON.stringify(signUpData),
+            headers: {
                 'Content-Type': 'application/json'
-                }
             }
+        }
         ).then(() => {
             history.replace('/Login');
         });

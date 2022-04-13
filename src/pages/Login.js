@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import classes from "./Login.module.css";
 import Card from '../components/ui/Card'
 import { useHistory } from 'react-router-dom';
@@ -6,28 +6,40 @@ import { Link } from "react-router-dom";
 
 function Login() {
   const history = useHistory();
-
   const [errorMessages, setErrorMessages] = useState({});
-
-  const database = [
-    {
-      username: "user1",
-      password: "pass1"
-    }
-  ];
+  const [ userinfo, setUserInfo ]  = useState([ ]);
 
   const errors = {
     uname: "invalid username",
     pass: "invalid password"
   };
 
+  useEffect ( () => {
+    fetch("http://localhost:5000/getUserInfo", {
+        "method": "GET",
+    })
+    .then(response => response.json().then(async (data) =>{
+        var userinfo = await data;
+        console.log(userinfo);
+        let list = [];
+        for ( let row in userinfo ){
+          list.push({
+              username: userinfo[row].username,
+              password: userinfo[row].password,
+              team: userinfo[row].team
+          })
+        }
+        setUserInfo(list);
+    }))
+    .catch(err => {
+        console.log(err);
+    })
+  },[]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
     var { uname, pass } = document.forms[0];
-
-    const userData = database.find((user) => user.username === uname.value);
-
+    const userData = userinfo.find((user) => user.username === uname.value);
     if (userData) {
       if (userData.password !== pass.value) {
         setErrorMessages({ name: "pass", message: errors.pass });
