@@ -7,7 +7,7 @@ function TopYellows(props) {
         <Card>
           <div className={classes.container}>
           <div className={classes.content}>
-            <table className={classes.table}>
+            <table className="table table-striped">
                 <thead>
                     <tr>
                     <th>Player</th>
@@ -15,7 +15,7 @@ function TopYellows(props) {
                     <th>Yellows</th>
                     </tr>
                 </thead>
-                <tbody id="Yellows"></tbody>
+                <tbody id="Yellows">
                   {props.yellows.map(yellow => (
                     <tr>
                       <th>{yellow.name}</th>
@@ -23,6 +23,7 @@ function TopYellows(props) {
                       <th>{yellow.yellows}</th>
                     </tr>
                   ))}
+                </tbody>
             </table>
           </div>
           </div>  

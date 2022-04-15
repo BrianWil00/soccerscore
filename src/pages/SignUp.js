@@ -22,11 +22,9 @@ function SignUp() {
     return (
         <div className={classes.mainDiv}>
             <h1 className={classes.heading}>Sign-Up</h1>
-            <Card>
-                <div className={classes.content}>
-                    <SignUpForm onSignUp={SignUpHandler}/>  
-                </div>
-            </Card>
+            <div className={classes.content}>
+                <SignUpForm onSignUp={SignUpHandler}/>  
+            </div>
         </div>
     );
 }

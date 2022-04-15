@@ -7,7 +7,7 @@ function TopAssists(props) {
         <Card>
           <div className={classes.container}>
           <div className={classes.content}>
-            <table className={classes.table}>
+            <table className="table table-striped">
                 <thead>
                     <tr>
                     <th>Player</th>
@@ -15,7 +15,7 @@ function TopAssists(props) {
                     <th>Assists</th>
                     </tr>
                 </thead>
-                <tbody id="Scorers"></tbody>
+                <tbody id="Scorers">
                   {props.assists.map(assist => (
                     <tr>
                       <th>{assist.name}</th>
@@ -23,6 +23,7 @@ function TopAssists(props) {
                       <th>{assist.assists}</th>
                     </tr>
                   ))}
+                </tbody>
             </table>
           </div>
           </div>  

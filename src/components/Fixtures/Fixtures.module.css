@@ -12,11 +12,10 @@
 }
   
 .content {
-  margin-left: 28%;
   padding: 1rem;
 }
 
 .table , th, td{
   border:1px solid black;
-  width: 600px;
+  width: 1000px;
 }

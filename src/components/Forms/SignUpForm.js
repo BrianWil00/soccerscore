@@ -3,6 +3,8 @@ import Card from '../ui/Card'
 
 import { useRef } from 'react'
 
+import { Link } from "react-router-dom";
+
 function SignUpForm(props) {
     const usernameInputRef = useRef();
     const passwordInputRef = useRef();
@@ -29,36 +31,44 @@ function SignUpForm(props) {
             <form className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.control}>
                     <label htmlFor='name'>Username</label>
-                    <input type="text" required id="username" ref={usernameInputRef}/>
+                    <input type="text"  class="form-control" required id="username" ref={usernameInputRef}/>
                     <p><label htmlFor='password'>Password</label></p>
-                    <input type="text" required id="password" ref={passwordInputRef}/>
+                    <input type="password" class="form-control" required id="password" ref={passwordInputRef}/>
                     <p><label htmlFor='team'>Team</label></p>
                     <select name="selectList" required id="team" ref={teamInputRef}>
-                    <option value="Arsenal">Arsenal</option>
-                    <option value="Aston Villa">Aston Villa</option>
-                    <option value="Brentford">Brentford</option>
-                    <option value="Brighton and Hove Albion">Brighton and Hove Albion</option>
-                    <option value="Burnley">Burnley</option>
-                    <option value="Chelsea">Chelsea</option>
-                    <option value="Crystal Palace">Crystal Palace</option>
-                    <option value="Everton">Everton</option>
-                    <option value="Leeds United">Leeds United</option>
-                    <option value="Leicester City">Leicester City</option>
-                    <option value="Liverpool">Liverpool</option>
-                    <option value="Manchester City">Manchester City</option>
-                    <option value="Manchester United">Manchester United</option>
-                    <option value="Newcastle United">Newcastle United</option>
-                    <option value="Norwich City">Norwich City</option>
-                    <option value="Southampton">Southampton</option>
-                    <option value="Tottenham Hotspur">Tottenham Hotspur</option>
-                    <option value="Watford">Watford</option>
-                    <option value="West Ham United">West Ham United</option>
-                    <option value="Wolverhampton Wanderers">Wolverhampton Wanderers</option>
+                    <option value="42">Arsenal</option>
+                    <option value="66">Aston Villa</option>
+                    <option value="55">Brentford</option>
+                    <option value="51">Brighton and Hove Albion</option>
+                    <option value="44">Burnley</option>
+                    <option value="49">Chelsea</option>
+                    <option value="52">Crystal Palace</option>
+                    <option value="45">Everton</option>
+                    <option value="63">Leeds United</option>
+                    <option value="46">Leicester City</option>
+                    <option value="40">Liverpool</option>
+                    <option value="50">Manchester City</option>
+                    <option value="33">Manchester United</option>
+                    <option value="34">Newcastle United</option>
+                    <option value="71">Norwich City</option>
+                    <option value="41">Southampton</option>
+                    <option value="47">Tottenham Hotspur</option>
+                    <option value="38">Watford</option>
+                    <option value="48">West Ham United</option>
+                    <option value="39">Wolverhampton Wanderers</option>
                     </select>
                 </div>
                 <div className={classes.actions}>
                     <button>Sign Up</button>
                 </div>
+                <div className= {classes.content}>
+                    <div>Already have an account?</div>
+                    <div className={classes.actions}>
+                        <Link to="/Login">
+                            <button>Login</button>
+                        </Link>
+                    </div>
+                 </div>
             </form>
         </Card>
     )

@@ -1,13 +1,17 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext} from "react";
 import classes from "./Login.module.css";
 import Card from '../components/ui/Card'
 import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
+import { LoginContext } from "../contexts/LoginContext"
 
 function Login() {
   const history = useHistory();
   const [errorMessages, setErrorMessages] = useState({});
   const [ userinfo, setUserInfo ]  = useState([ ]);
+  const { setUserData } = useContext(UserContext);
+  const { setLoginData } = useContext(LoginContext);
 
   const errors = {
     uname: "invalid username",
@@ -45,6 +49,7 @@ function Login() {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         history.push("/MyTeams");
+        setUserData(userData);
       }
     } else {
       setErrorMessages({ name: "uname", message: errors.uname });
@@ -60,13 +65,13 @@ function Login() {
     <div className={classes.control}>
       <form onSubmit={handleSubmit}>
         <label>Username</label>
-        <input type="text" name="uname" required />
+        <input type="text" class="form-control" name="uname" required />
         {renderErrorMessage("uname")}
         <label>Password </label>
-        <input type="password" name="pass" required />
+        <input type="password" class="form-control" name="pass" required />
         {renderErrorMessage("pass")}
         <div className={classes.actions}>
-          <button type="submit">Login</button>
+          <button type="submit" >Login</button>
         </div>
       </form>
     </div>

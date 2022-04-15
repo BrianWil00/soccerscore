@@ -7,7 +7,7 @@ function Standings(props) {
         <Card>
           <div className={classes.container}>
           <div className={classes.content}>
-            <table className={classes.table}>
+            <table className="table table-striped">
                 <thead>
                     <tr>
                     <th>Position</th>
@@ -17,7 +17,7 @@ function Standings(props) {
                     <th>Points</th>
                     </tr>
                 </thead>
-                <tbody id="Standings"></tbody>
+                <tbody id="Standings">
                   {props.standings.map(standing => (
                     <tr>
                       <th>{standing.rank}</th>
@@ -27,6 +27,7 @@ function Standings(props) {
                       <th>{standing.points}</th>
                     </tr>
                   ))}
+                </tbody>
             </table>
           </div>
           </div>  

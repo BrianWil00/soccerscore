@@ -8,8 +8,9 @@ function MainPage() {
 
     const [ standings, setStandings ]  = useState([ ]);
     const [ fixtures, setFixtures ] = useState([ ]);
+    const [ results, setResults ] = useState([ ]);
 
-    //Function to get premier league standings from the API 
+    //get premier league standings from the API 
     useEffect ( () => {
         fetch("https://v3.football.api-sports.io/standings?league=39&season=2021", {
             "method": "GET",
@@ -38,6 +39,7 @@ function MainPage() {
         })
     },[]);
 
+    //get fixtures and results of premier league games 
     useEffect ( () => {
         fetch(" https://v3.football.api-sports.io/fixtures?league=39&season=2021", {
             "method": "GET",
@@ -49,18 +51,29 @@ function MainPage() {
         .then(response => response.json().then(async (data) =>{
             var fixtures = await data['response'];
             console.log(fixtures);
-            let list = [];
+            let fixturesList = [];
+            let resultsList = [];
             for ( let row in fixtures ){
-                list.push({
-                    when: fixtures[row].fixture.date,
-                    status: fixtures[row].fixture.status.short,
-                    home: fixtures[row].teams.home.name,
-                    away: fixtures[row].teams.away.name,
-                    homescore: fixtures[row].score.fulltime.home,
-                    awayscore: fixtures[row].score.fulltime.away
-                })
+                if ( fixtures[row].fixture.status.short == 'FT'){
+                    resultsList.push({
+                        when: fixtures[row].fixture.date,
+                        home: fixtures[row].teams.home.name,
+                        away: fixtures[row].teams.away.name,
+                        homescore: fixtures[row].score.fulltime.home,
+                        awayscore: fixtures[row].score.fulltime.away
+                    })
+                }
+                else {
+                    fixturesList.push({
+                        when: fixtures[row].fixture.date,
+                        where: fixtures[row].fixture.venue.name,
+                        home: fixtures[row].teams.home.name,
+                        away: fixtures[row].teams.away.name
+                    })
+                }
             }
-            setFixtures(list);
+            setFixtures(fixturesList);
+            setResults(resultsList);
         }))
         .catch(err => {
         console.log(err);
@@ -74,6 +87,8 @@ function MainPage() {
             <Standings standings={standings} />
             <h1 className={classes.heading}>Fixtures</h1>          
             <Fixtures fixtures={fixtures} />
+            <h1 className={classes.heading}>Results</h1>          
+            <Results results={results} />
         </div>
     );
 }

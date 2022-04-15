@@ -3,13 +3,20 @@
 }
 
 .container {
+  display: flex;
   padding-bottom: 1.5rem;
 }  
-
+.title {
+  text-align: center;
+  padding: 0.5rem;
+}
+  
 .content {
   padding: 1rem;
-  font-size: 1.25rem;
-  text-align:center; 
-  margin-left:40%; 
+}
+
+.table , th, td{
+  border:1px solid black;
+  width: 1000px;
 }
 

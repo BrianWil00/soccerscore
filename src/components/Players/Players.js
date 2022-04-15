@@ -1,7 +1,7 @@
-import classes from './Fixtures.module.css';
+import classes from './Players.module.css';
 import Card from '../ui/Card';
 
-function Fixtures(props) {
+function Players(props) {
     return (
       <li className={classes.item}>
         <Card>
@@ -10,19 +10,19 @@ function Fixtures(props) {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Home</th>
-                    <th>Away</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Position</th>
+                    <th>Number</th>
                     </tr>
                 </thead>
-                <tbody id="Fixtures">
-                {props.fixtures.map(fixture => (
+                <tbody id="Players">
+                {props.players.map(player => (
                     <tr>
-                      <th>{fixture.when}</th>
-                      <th>{fixture.where}</th>
-                      <th>{fixture.home}</th>
-                      <th>{fixture.away}</th>
+                      <th>{player.name}</th>
+                      <th>{player.age}</th>
+                      <th>{player.position}</th>
+                      <th>{player.number}</th>
                     </tr>
                   ))}
                 </tbody>
@@ -34,5 +34,5 @@ function Fixtures(props) {
     );
   }
   
-  export default Fixtures;
+  export default Players;
   

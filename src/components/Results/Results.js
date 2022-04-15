@@ -7,8 +7,28 @@ function Results(props) {
         <Card>
           <div className={classes.container}>
             <div className={classes.content}>
-              <tr>{props.time}</tr>
-              <tr>{props.home} {props.score} {props.away}</tr>
+            <table className="table table-striped">
+                <thead>
+                    <tr>
+                    <th>Date</th>
+                    <th>Home</th>
+                    <th>Score</th>
+                    <th>Score</th>
+                    <th>Away</th>
+                    </tr>
+                </thead>
+                <tbody id="Results">
+                {props.results.map(result => (
+                    <tr>
+                      <th>{result.when}</th>
+                      <th>{result.home}</th>
+                      <th>{result.homescore}</th>
+                      <th>{result.awayscore}</th>
+                      <th>{result.away}</th>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>  
         </Card>
