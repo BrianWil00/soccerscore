@@ -4,6 +4,7 @@ import classes from "./App.module.css";
 import SignUp from './pages/SignUp';
 import Stats from './pages/Stats';
 import MainPage from './pages/MainPage';
+import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import MainNavigation from './components/layout/MainNavigation';
 import MyTeams from './pages/MyTeams';
@@ -19,7 +20,7 @@ function App() {
       <MainNavigation />
       <Switch>
         <Route path='/' exact>
-          <MainPage />
+          <Homepage />
         </Route>
         <Route path='/Stats' exact>
           <Stats />
@@ -34,6 +35,9 @@ function App() {
         </Route>
         <Route path='/MyTeams' exact>
             <MyTeams />
+        </Route>
+        <Route path='/MainPage' exact>
+            <MainPage />
         </Route>
         </LoginContext.Provider>
         </UserContext.Provider>

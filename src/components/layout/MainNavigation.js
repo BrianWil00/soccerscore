@@ -11,6 +11,9 @@ function MainNavigation() {
             <Link to='/'>Home</Link>
           </li>
           <li>
+            <Link to='/MainPage'>Fixtures/Results</Link>
+          </li>
+          <li>
             <Link to='/Stats'>Stats</Link>
           </li>
           <li>
