@@ -19,14 +19,14 @@ function App() {
     <div className={classes.mainDiv}>
       <MainNavigation />
       <Switch>
+      <LoginContext.Provider value={{ LoginData, setLoginData}}>
+      <UserContext.Provider value={{ UserData, setUserData}}>
         <Route path='/' exact>
           <Homepage />
         </Route>
         <Route path='/Stats' exact>
           <Stats />
         </Route>
-        <UserContext.Provider value={{ UserData, setUserData}}>
-        <LoginContext.Provider value={{ LoginData, setLoginData}}>
         <Route path='/Login' exact>
           <Login />
         </Route>
@@ -39,8 +39,8 @@ function App() {
         <Route path='/MainPage' exact>
             <MainPage />
         </Route>
-        </LoginContext.Provider>
         </UserContext.Provider>
+        </LoginContext.Provider>
       </Switch>
     </div>
   );

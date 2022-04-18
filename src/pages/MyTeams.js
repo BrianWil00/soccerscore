@@ -1,18 +1,27 @@
 import React, { useState, useEffect, useContext } from "react";
 import classes from "./MyTeams.module.css";
 import { UserContext } from "../contexts/UserContext";
+import { useHistory } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Card from '../components/ui/Card'
 
 import Results from "../components/Results/Results";
 import Fixtures from "../components/Fixtures/Fixtures";
 import Players from "../components/Players/Players";
 
 function MyTeams() {
-
+  const history = useHistory();
   const [ fixtures, setFixtures ] = useState([ ]);
   const [ players, setPlayers ] = useState([ ]);
   const [ results, setResults ] = useState([ ]);
 
   const  UserData = useContext(UserContext);
+
+  if(UserData.UserData == null){
+    history.push("/Login");
+    window.location.reload(false);
+  }
+
   console.log(UserData.UserData.team);
   const teamID = UserData.UserData.team;
   let text = null;
@@ -147,11 +156,24 @@ useEffect ( () => {
   })
 },[]);
 
+function Logout() {
+  window.location.reload(false);
+  return null;
+}
+
   return(
     <div className={classes.mainDiv}>  
-    <h1 className={classes.heading}>{text} Fixtures</h1>          
+    <Card>
+      <div className= {classes.content}>
+        <h1>This page shows you {text}'s Fixtures , Results and Player list </h1>
+            <div className={classes.actions}>
+              <button onClick={Logout}>Log Out</button>
+            </div>
+          </div>
+    </Card>
+    <h1 className={classes.heading}>{text}'s Fixtures</h1>          
     <Fixtures fixtures={fixtures} />
-    <h1 className={classes.heading}>{text} Results</h1>          
+    <h1 className={classes.heading}>{text}'s Results</h1>          
     <Results results={results} />
     <h1 className={classes.heading}>{text} Players</h1>          
     <Players players={players} />

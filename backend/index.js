@@ -4,6 +4,7 @@ const router = express();
 
 const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://SoccerScoreUser1:SoccerScore@cluster0.t5zdz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+//mongoose.connect("localhost:27017/SoccerScore");
 
 // For backend and express
 const cors = require("cors");

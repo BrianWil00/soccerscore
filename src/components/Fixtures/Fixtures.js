@@ -13,6 +13,7 @@ function Fixtures(props) {
                     <th>Date</th>
                     <th>Location</th>
                     <th>Home</th>
+                    <th></th>
                     <th>Away</th>
                     </tr>
                 </thead>
@@ -22,6 +23,7 @@ function Fixtures(props) {
                       <th>{fixture.when}</th>
                       <th>{fixture.where}</th>
                       <th>{fixture.home}</th>
+                      <th>vs</th>
                       <th>{fixture.away}</th>
                     </tr>
                   ))}

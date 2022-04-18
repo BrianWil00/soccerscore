@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import classes from './MainNavigation.module.css';
 
 function MainNavigation() {
-  return (
+   return (
     <header className={classes.header}>
       <div className={classes.logo}>SoccerScore</div>
       <nav>
@@ -17,7 +17,7 @@ function MainNavigation() {
             <Link to='/Stats'>Stats</Link>
           </li>
           <li>
-            <Link to='/Login'>Login</Link>
+            <Link to='/Login'>Profile</Link>
           </li>
         </ul>
       </nav>

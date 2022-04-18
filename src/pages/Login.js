@@ -12,11 +12,16 @@ function Login() {
   const [ userinfo, setUserInfo ]  = useState([ ]);
   const { setUserData } = useContext(UserContext);
   const { setLoginData } = useContext(LoginContext);
+  const  UserData = useContext(UserContext);
 
   const errors = {
     uname: "invalid username",
     pass: "invalid password"
   };
+
+  if(UserData.UserData != null){
+    history.push("/MyTeams");
+  }
 
   useEffect ( () => {
     fetch("http://localhost:5000/getUserInfo", {
@@ -50,6 +55,7 @@ function Login() {
       } else {
         history.push("/MyTeams");
         setUserData(userData);
+        setLoginData(userData);
       }
     } else {
       setErrorMessages({ name: "uname", message: errors.uname });
