@@ -165,7 +165,7 @@ function Logout() {
     <div className={classes.mainDiv}>  
     <Card>
       <div className= {classes.content}>
-        <h1>This page shows you {text}'s Fixtures , Results and Player list </h1>
+        <h1>This page shows you {text}'s Fixtures , Results and Squad list </h1>
             <div className={classes.actions}>
               <button onClick={Logout}>Log Out</button>
             </div>

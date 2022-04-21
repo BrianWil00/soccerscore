@@ -36,12 +36,6 @@ export default function Homepage() {
         })
     },[]);
 
-
-
-
-
-
-
   return (
     
     <div className={classes.mainDiv}>
